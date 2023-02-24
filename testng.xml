@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing demo">
+    <listeners>
+        <listener class-name="supplementary.ReportsListener"/>
+    </listeners>
+    <test name="loginTest">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="URL" value="https://www.aprendescrum.com/"/>
+        <parameter name="Headless" value="True"/>
+        <classes>
+            <class name="tests.web.loginTests.LoginTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="ownerTest">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="URL" value="https://www.aprendescrum.com/"/>
+        <parameter name="Headless" value="True"/>
+        <classes>
+            <class name="tests.web.landingTests.RpoTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
