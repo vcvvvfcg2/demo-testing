@@ -7,7 +7,7 @@
     <test name="loginTest">
         <parameter name="browser" value="Firefox"/>
         <parameter name="URL" value="https://www.aprendescrum.com/"/>
-        <parameter name="Headless" value="True"/>
+        <parameter name="Headless" value="False"/>
         <classes>
             <class name="tests.web.loginTests.LoginTest"/>
         </classes>
@@ -15,7 +15,7 @@
     <test name="ownerTest">
         <parameter name="browser" value="Firefox"/>
         <parameter name="URL" value="https://www.aprendescrum.com/"/>
-        <parameter name="Headless" value="True"/>
+        <parameter name="Headless" value="False"/>
         <classes>
             <class name="tests.web.landingTests.RpoTest"/>
         </classes>
