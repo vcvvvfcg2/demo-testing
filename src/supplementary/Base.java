@@ -1,6 +1,5 @@
 package supplementary;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,9 +14,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import java.net.MalformedURLException;
 
-
 public class Base extends SimpleMethods{
-
     protected WebDriver driver;
     @Parameters({"browser", "Headless"})
     @BeforeTest
@@ -29,24 +26,20 @@ public class Base extends SimpleMethods{
                 options.setHeadless(true);
                 driver = new ChromeDriver(options);
 
-
             } else if (browser.equals("Firefox")) {
                 FirefoxOptions options = new FirefoxOptions();
                 options.setHeadless(true);
                 driver = new FirefoxDriver(options);
-
 
             } else if (browser.equals("Edge")) {
                 EdgeOptions options = new EdgeOptions();
                 options.setHeadless(true);
                 driver = new EdgeDriver(options);
 
-
             } else {
                 SafariOptions options = new SafariOptions();
                 driver = new SafariDriver(options);
                 driver.manage().window().maximize();
-
             }
         }else if (Headless.equals("False")) {
 
@@ -82,6 +75,4 @@ public class Base extends SimpleMethods{
     @AfterTest
     public void exit(){
         quit(driver);}
-
-
 }
