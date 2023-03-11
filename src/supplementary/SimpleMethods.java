@@ -9,17 +9,28 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class SimpleMethods {
+
     DatesData datesData;
     public boolean click(WebDriver driver, WebElement element, WebDriverWait wait){
-        element.click();
-        return true;
+        try {
+            element.click();
+            return true;
+        }catch (Exception e){
+            Assert.fail("button not clicked");
+            return false;
+        }
     }
 
-    public Boolean sendKeys(WebElement element, String text, WebDriver driver, WebDriverWait wait) throws InterruptedException {
-        waitElement(driver);
-        element.click();
-        element.sendKeys(text);
-        return null;
+    public Boolean sendKeys(WebElement element, String text, WebDriver driver, WebDriverWait wait){
+        try {
+            waitElement(driver);
+            element.click();
+            element.sendKeys(text);
+            return true;
+        }catch (Exception e){
+            Assert.fail("could not send keys");
+            return false;
+        }
     }
 
     public void dropdown(String dates, String drpName, WebDriver driver, WebDriverWait wait) throws InterruptedException {
@@ -45,8 +56,12 @@ public class SimpleMethods {
         }
     }
 
-    public void loadWebsite(String url, WebDriver driver) throws InterruptedException {
-        driver.get(url);
+    public void loadWebsite(String url, WebDriver driver) {
+        try {
+            driver.get(url);
+        }catch (Exception e){
+            Assert.fail("No se ha podido cargar la pagina");
+        }
     }
 
     public void quit(WebDriver driver){
@@ -114,4 +129,6 @@ public class SimpleMethods {
         public static int number;
         public static String dateOffers;
     }
+    public static String pathPo = TestData.reportPath.pathPO;
+    public static String pathLogin = TestData.reportPath.pathLogin;
 }

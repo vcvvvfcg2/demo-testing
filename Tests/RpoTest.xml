@@ -11,5 +11,5 @@
         <classes>
             <class name="tests.web.landingTests.RpoTest"/>
         </classes>
-    </test> <!-- Test -->
+    </test> <!-- Test   -->
 </suite> <!-- Default Suite -->

@@ -23,4 +23,8 @@ public class TestData {
         public final static int date = 4;
     }
 
+    public static class reportPath  {
+        public final static String pathPO = "/Users/m1vf/IdeaProjects/demo-testing/output-tests/RpoTest.html";
+        public final static String pathLogin = "/Users/m1vf/IdeaProjects/demo-testing/output-tests/LoginTestReport.html";
+    }
 }
