@@ -2,7 +2,6 @@ package tests.web.loginTests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.testng.annotations.BeforeTest;
@@ -24,25 +23,29 @@ public class LoginTest extends Base {
     public void LoginMethods(){
         try {
             loginMethods.clickLoginBtn();
-            test.log(Status.PASS, "Login button clicked");
-            extent.flush();
+            test.log(Status.PASS, "Login button clicked"); extent.flush();
         }catch (Exception e){
-            test.fail(" Login Button could not be clicked");
-            extent.flush();
+            test.fail(" Login Button could not be clicked"); extent.flush();
         }try {
             loginMethods.sendEmail(email);
-            test.log(Status.PASS, "Email key sent");
-            extent.flush();
+            test.log(Status.PASS, "Email key sent"); extent.flush();
         }catch (Exception e){
-            test.fail(" Email key could not be sent");
-            extent.flush();
+            test.fail(" Email key could not be sent"); extent.flush();
         }try {
             loginMethods.sendPass(password);
-            test.log(Status.PASS, "Password key sent");
-            extent.flush();
+            test.log(Status.PASS, "Password key sent"); extent.flush();
         }catch (Exception e){
-            test.fail("Password key could not be sent");
-            extent.flush();
+            test.fail("Password key could not be sent"); extent.flush();
+        }try {
+            loginMethods.clickSubmitBtn();
+            test.log(Status.PASS, "submit button clicked"); extent.flush();
+        }catch (Exception e){
+            test.fail("submit button could not be clicked"); extent.flush();
+        }try {
+            loginMethods.clickViewPrdt();
+            test.log(Status.PASS, "view product button clicked"); extent.flush();
+        }catch (Exception e){
+            test.fail("view product button could not be clicked"); extent.flush();
         }
     }
     final static String email = TestData.dataLogin.userName;
