@@ -12,13 +12,11 @@ import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import java.net.MalformedURLException;
-
 public class Base extends SimpleMethods{
     protected WebDriver driver;
     @Parameters({"browser", "Headless"})
     @BeforeTest
-    public void browserName(String browser, String Headless) throws MalformedURLException, InterruptedException {
+    public void browserName(String browser, String Headless){
 
         if (Headless.equals("True")) {
             if (browser.equals("Chrome")) {
@@ -66,13 +64,16 @@ public class Base extends SimpleMethods{
             }
         }
     }
+
+
     @Parameters("URL")
     @BeforeTest
     public void loadWeb(String url){
-       loadWebsite(url, driver);
+        loadWebsite(url, driver);
     }
 
     @AfterTest
     public void exit(){
         quit(driver);}
+
 }

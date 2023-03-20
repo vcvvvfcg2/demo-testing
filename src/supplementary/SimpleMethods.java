@@ -131,4 +131,7 @@ public class SimpleMethods {
     }
     public static String pathPo = TestData.reportPath.pathPO;
     public static String pathLogin = TestData.reportPath.pathLogin;
+    public static String pathLoginImg = TestData.reportPath.pathImgLogin;
+    public static String pathPoImg = TestData.reportPath.pathImgPo;
+
 }
